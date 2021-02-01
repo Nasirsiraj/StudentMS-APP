@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "studentms-app"
+  "defaultProject": "studentms-app",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
