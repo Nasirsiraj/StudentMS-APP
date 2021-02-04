@@ -6,9 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
   constructor() { }
   sidenavOpened = true;
+  navLinkList = [
+    'All Student',
+    'Registration',
+    'Search Student',
+    'Find Result',
+    'Notice Board',
+    'Contact',
+    'Help',
+    'Share',
+    'Settings'
+  ];
 
   ngOnInit(): void {
   }
