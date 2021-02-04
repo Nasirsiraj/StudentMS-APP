@@ -7,7 +7,9 @@ import {RegistrationComponent} from './component/registration/registration.compo
 const routes: Routes = [
   {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
   {path: 'dashboard', component: DashboardComponent, children: [
-      {path: 'registration', component: RegistrationComponent}
+      {path: '', redirectTo: 'registration', pathMatch: 'full'},
+      {path: 'registration', component: RegistrationComponent},
+      {path: '**', redirectTo: 'all-student'}
     ]},
   {path: 'error', component: ErrorPageComponent},
   {path: '**', redirectTo: 'error'}
