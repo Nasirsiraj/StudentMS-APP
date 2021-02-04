@@ -134,6 +134,7 @@
   },
   "defaultProject": "studentms-app",
   "cli": {
+    "analytics": false,
     "defaultCollection": "@ngrx/schematics"
   }
 }
