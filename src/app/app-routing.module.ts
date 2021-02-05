@@ -4,6 +4,7 @@ import {DashboardComponent} from './component/dashboard/dashboard.component';
 import {ErrorPageComponent} from './component/error-page/error-page.component';
 import {RegistrationComponent} from './component/registration/registration.component';
 import {ContactComponent} from './component/contact/contact.component';
+import {HelpComponent} from './component/help/help.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
@@ -11,6 +12,7 @@ const routes: Routes = [
       {path: '', redirectTo: 'registration', pathMatch: 'full'},
       {path: 'registration', component: RegistrationComponent},
       {path: 'contact', component: ContactComponent},
+      {path: 'help', component: HelpComponent},
       {path: '**', redirectTo: 'all-student'}
     ]},
   {path: 'error', component: ErrorPageComponent},
@@ -26,5 +28,6 @@ export const RoutingComponent = [
   DashboardComponent,
   ErrorPageComponent,
   RegistrationComponent,
-  ContactComponent
+  ContactComponent,
+  HelpComponent
 ];

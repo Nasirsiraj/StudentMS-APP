@@ -4,6 +4,7 @@ import {MaterialModule} from '../material/material.module';
 import {AppRoutingModule, RoutingComponent} from '../app-routing.module';
 import { FooterComponent } from './footer/footer.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HelpComponent } from './help/help.component';
 
 
 @NgModule({
