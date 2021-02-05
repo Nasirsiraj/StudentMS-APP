@@ -7,6 +7,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AllStudentComponent } from './all-student/all-student.component';
 import { SearchStudentComponent } from './search-student/search-student.component';
 import { FindResultComponent } from './find-result/find-result.component';
+import { NoticeBoardComponent } from './notice-board/notice-board.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { FindResultComponent } from './find-result/find-result.component';
       AllStudentComponent,
       SearchStudentComponent,
       FindResultComponent,
+      NoticeBoardComponent,
     ],
     exports: [
       FooterComponent
