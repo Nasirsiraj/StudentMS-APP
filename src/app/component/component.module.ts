@@ -5,6 +5,7 @@ import {AppRoutingModule, RoutingComponent} from '../app-routing.module';
 import { FooterComponent } from './footer/footer.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AllStudentComponent } from './all-student/all-student.component';
+import { SearchStudentComponent } from './search-student/search-student.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { AllStudentComponent } from './all-student/all-student.component';
       RoutingComponent,
       FooterComponent,
       AllStudentComponent,
+      SearchStudentComponent,
     ],
     exports: [
       FooterComponent
