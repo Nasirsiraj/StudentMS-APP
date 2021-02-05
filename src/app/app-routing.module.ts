@@ -7,11 +7,19 @@ import {ContactComponent} from './component/contact/contact.component';
 import {HelpComponent} from './component/help/help.component';
 import {ShareComponent} from './component/share/share.component';
 import {SettingsComponent} from './component/settings/settings.component';
+import {AllStudentComponent} from './component/all-student/all-student.component';
+import {SearchStudentComponent} from './component/search-student/search-student.component';
+import {FindResultComponent} from './component/find-result/find-result.component';
+import {NoticeBoardComponent} from './component/notice-board/notice-board.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
   {path: 'dashboard', component: DashboardComponent, children: [
-      {path: '', redirectTo: 'registration', pathMatch: 'full'},
+      {path: '', redirectTo: 'all-student', pathMatch: 'full'},
+      {path: 'all-student', component: AllStudentComponent},
+      {path: 'search-student', component: SearchStudentComponent},
+      {path: 'find-result', component: FindResultComponent},
+      {path: 'notice-board', component: NoticeBoardComponent},
       {path: 'registration', component: RegistrationComponent},
       {path: 'contact', component: ContactComponent},
       {path: 'help', component: HelpComponent},
