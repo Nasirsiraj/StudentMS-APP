@@ -6,6 +6,7 @@ import { FooterComponent } from './footer/footer.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AllStudentComponent } from './all-student/all-student.component';
 import { SearchStudentComponent } from './search-student/search-student.component';
+import { FindResultComponent } from './find-result/find-result.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { SearchStudentComponent } from './search-student/search-student.componen
       FooterComponent,
       AllStudentComponent,
       SearchStudentComponent,
+      FindResultComponent,
     ],
     exports: [
       FooterComponent
