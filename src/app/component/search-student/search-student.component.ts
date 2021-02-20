@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-search-student',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchStudentComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private formBuilder: FormBuilder
+  ) { }
+
+  searchStudentForm = this.formBuilder.group({
+    roll: [null, [Validators.required]],
+    reg: [null, [Validators.required]]
+  })
 
   ngOnInit(): void {
   }
+  onSubmit(value: any): void{
+    console.log(value)
+  }
 
+  // getters
+  get roll(){
+    return this.searchStudentForm.get('roll')
+  }
+  get reg(){
+    return this.searchStudentForm.get('reg')
+  }
 }

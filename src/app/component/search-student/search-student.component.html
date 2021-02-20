@@ -1,1 +1,46 @@
-<p>search-student works!</p>
+<div class="container">
+  <h1>Enter your info</h1>
+  <mat-divider></mat-divider>
+  <br><br>
+  <form [formGroup]="searchStudentForm">
+<!--    roll-->
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your roll no</mat-label>
+      <input
+        type="number"
+        name="roll"
+        matInput
+        formControlName="roll"
+        placeholder="roll no"
+        />
+      <mat-error *ngIf="roll && roll.invalid && roll.touched">
+        roll no is required
+      </mat-error>
+    </mat-form-field>
+    <br><br>
+
+<!--    reg-->
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your reg no</mat-label>
+      <input
+        type="number"
+        name="reg"
+        matInput
+        formControlName="reg"
+        placeholder="reg no"
+      />
+      <mat-error *ngIf="reg && reg.invalid && reg.touched">
+        reg no is required
+      </mat-error>
+    </mat-form-field>
+    <br><br>
+
+<!--    submit-->
+    <button
+      mat-raised-button
+      [disabled]="searchStudentForm.invalid"
+      (click)="onSubmit(searchStudentForm.value)"
+      color="primary"
+      >Search</button>
+  </form>
+</div>
