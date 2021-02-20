@@ -14,7 +14,15 @@
         placeholder="name"
       />
       <mat-error *ngIf="name && name.invalid && name.touched">
-        name is required
+        <span *ngIf="name.hasError('required')">
+          name is required
+        </span>
+        <span *ngIf="name.hasError('minlength')">
+          minimum 3 character required
+        </span>
+        <span *ngIf="name.hasError('maxlength')">
+          maximum 20 character required
+        </span>
       </mat-error>
     </mat-form-field>
     <br><br>
@@ -29,7 +37,9 @@
         placeholder="roll no"
       />
       <mat-error *ngIf="roll && roll.invalid && roll.touched">
-        roll is required
+        <span *ngIf="roll.hasError('required')">roll no is required</span>
+        <span *ngIf="roll.hasError('min')">minimum 6 digit required</span>
+        <span *ngIf="roll.hasError('max')">maximum 10 digit required</span>
       </mat-error>
     </mat-form-field>
     <br><br>
@@ -44,7 +54,9 @@
         placeholder="reg no"
       />
       <mat-error *ngIf="reg && reg.invalid && reg.touched">
-        reg is required
+        <span *ngIf="reg.hasError('required')">reg no is required</span>
+        <span *ngIf="reg.hasError('min')">minimum 6 digit required</span>
+        <span *ngIf="reg.hasError('max')">maximum 10 digit required</span>
       </mat-error>
     </mat-form-field>
     <br><br>
@@ -59,7 +71,12 @@
         placeholder="email"
       />
       <mat-error *ngIf="email && email.invalid && email.touched">
-        email is required
+        <span *ngIf="email.hasError('required')">
+          email is required
+        </span>
+        <span *ngIf="email.hasError('email')">
+          invalid email
+        </span>
       </mat-error>
     </mat-form-field>
     <br><br>
@@ -74,7 +91,15 @@
         placeholder="department"
       />
       <mat-error *ngIf="department && department.invalid && department.touched">
-        department is required
+        <span *ngIf="department.hasError('required')">
+          department is required
+        </span>
+        <span *ngIf="department.hasError('minlength')">
+          minimum 3 character required
+        </span>
+        <span *ngIf="department.hasError('maxlength')">
+          maximum 15 character required
+        </span>
       </mat-error>
     </mat-form-field>
     <br><br>
@@ -89,7 +114,15 @@
         placeholder="semester"
       />
       <mat-error *ngIf="semester && semester.invalid && semester.touched">
-        semester is required
+        <span *ngIf="semester.hasError('required')">
+          semester is required
+        </span>
+        <span *ngIf="semester.hasError('minlength')">
+          minimum 3 character is required
+        </span>
+        <span *ngIf="semester.hasError('maxlength')">
+          maximum 10 character is required
+        </span>
       </mat-error>
     </mat-form-field>
     <br>

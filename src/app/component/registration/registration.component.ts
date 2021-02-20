@@ -17,25 +17,15 @@ export class RegistrationComponent implements OnInit {
 
   registrationForm = this.formBuilder.group({
     id: [null,],
-    name: ['', [Validators.required]],
-    roll: [null, [Validators.required]],
-    reg: [null, [Validators.required]],
-    email: ['', [Validators.required]],
-    department: ['', [Validators.required]],
-    semester: ['', [Validators.required]]
+    name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
+    roll: [null, [Validators.required, Validators.min(100000), Validators.max(9999999999)]],
+    reg: [null, [Validators.required, Validators.min(100000), Validators.max(9999999999)]],
+    email: ['', [Validators.required, Validators.email]],
+    department: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
+    semester: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(10)]]
   });
   onSubmit(student: Student): void{
     console.log(student)
-    // if(student === null){
-    //   this.studentService.postOneStudent(student).subscribe(
-    //     (response => {
-    //       console.log(response)
-    //     }),
-    //     (error => {
-    //       console.log(error as Error)
-    //     })
-    //   )
-    // }
   }
 
   ngOnInit(): void {

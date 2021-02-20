@@ -12,8 +12,8 @@ export class FindResultComponent implements OnInit {
   ) { }
 
   searchStudentForm = this.formBuilder.group({
-    roll: [null, [Validators.required]],
-    reg: [null, [Validators.required]]
+    roll: [null, [Validators.required, Validators.min(100000), Validators.max(9999999999)]],
+    reg: [null, [Validators.required, Validators.min(100000), Validators.max(9999999999)]]
   })
 
   ngOnInit(): void {

@@ -14,7 +14,9 @@
         placeholder="roll no"
       />
       <mat-error *ngIf="roll && roll.invalid && roll.touched">
-        roll no is required
+        <span *ngIf="roll.hasError('required')">roll no is required</span>
+        <span *ngIf="roll.hasError('min')">minimum 6 digit required</span>
+        <span *ngIf="roll.hasError('max')">maximum 10 digit required</span>
       </mat-error>
     </mat-form-field>
     <br><br>
@@ -30,7 +32,9 @@
         placeholder="reg no"
       />
       <mat-error *ngIf="reg && reg.invalid && reg.touched">
-        reg no is required
+        <span *ngIf="reg.hasError('required')">reg no is required</span>
+        <span *ngIf="reg.hasError('min')">minimum 6 digit required</span>
+        <span *ngIf="reg.hasError('max')">maximum 10 digit required</span>
       </mat-error>
     </mat-form-field>
     <br><br>
