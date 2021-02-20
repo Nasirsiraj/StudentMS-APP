@@ -38,6 +38,10 @@ const routes: Routes = [
 export class AppRoutingModule { }
 export const RoutingComponent = [
   DashboardComponent,
+  AllStudentComponent,
+  SearchStudentComponent,
+  FindResultComponent,
+  NoticeBoardComponent,
   ErrorPageComponent,
   RegistrationComponent,
   ContactComponent,
