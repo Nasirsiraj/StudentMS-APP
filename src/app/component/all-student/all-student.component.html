@@ -1,1 +1,84 @@
-<p>all-student works!</p>
+<div class="container">
+  <h1 align="center">All Student Info Table</h1>
+  <mat-divider></mat-divider>
+  <br>
+ <table
+   mat-table
+   [dataSource]="students"
+   class="mat-elevation-z2"
+   mat-ripple
+   [matRippleUnbounded]="rippleUnbounded"
+   [matRippleRadius]="rippleRadius"
+ >
+<!--   ID column-->
+   <ng-container matColumnDef="id">
+     <th mat-header-cell *matHeaderCellDef>ID</th>
+     <td mat-cell *matCellDef="let student">{{student.id}}</td>
+   </ng-container>
+
+<!--   Name column-->
+   <ng-container matColumnDef="name">
+     <th mat-header-cell *matHeaderCellDef>Name</th>
+     <td mat-cell *matCellDef="let student">{{student.name}}</td>
+   </ng-container>
+
+<!--   Roll column-->
+   <ng-container matColumnDef="roll">
+     <th mat-header-cell *matHeaderCellDef>Roll</th>
+     <td mat-cell *matCellDef="let student">{{student.roll}}</td>
+   </ng-container>
+
+<!--   Reg column-->
+   <ng-container matColumnDef="reg">
+     <th mat-header-cell *matHeaderCellDef>Reg</th>
+     <td mat-cell *matCellDef="let student">{{student.reg}}</td>
+   </ng-container>
+
+<!--   Email column-->
+   <ng-container matColumnDef="email">
+     <th mat-header-cell *matHeaderCellDef>Email</th>
+     <td mat-cell *matCellDef="let student">{{student.email}}</td>
+   </ng-container>
+
+<!--   Department column-->
+   <ng-container matColumnDef="department">
+     <th mat-header-cell *matHeaderCellDef>Department</th>
+     <td mat-cell *matCellDef="let student">{{student.department}}</td>
+   </ng-container>
+
+<!--   Semester column-->
+   <ng-container matColumnDef="semester">
+     <th mat-header-cell *matHeaderCellDef>Semester</th>
+     <td mat-cell *matCellDef="let student">{{student.semester}}</td>
+   </ng-container>
+
+<!--   edit column-->
+   <ng-container matColumnDef="edit">
+     <th mat-header-cell *matHeaderCellDef>Edit</th>
+     <td mat-cell *matCellDef="let student">
+       <button
+         mat-button
+         color="accent"
+       >Edit</button>
+     </td>
+   </ng-container>
+
+<!--   delete column-->
+   <ng-container matColumnDef="delete">
+     <th mat-header-cell *matHeaderCellDef>Delete</th>
+     <td mat-cell *matCellDef="let student">
+       <button mat-raised-button color="warn">
+         Delete
+       </button>
+     </td>
+   </ng-container>
+
+
+   <tr mat-header-row *matHeaderRowDef="studentColumns;"></tr>
+   <tr mat-row *matRowDef="let row; columns: studentColumns;"></tr>
+
+
+ </table>
+  <br><br><br><br>
+  <br><br><br><br>
+</div>
