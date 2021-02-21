@@ -14,6 +14,21 @@ export class RegistrationComponent implements OnInit {
     private formBuilder: FormBuilder,
     private studentService: StudentService
   ) { }
+  departments = [
+    'Computer',
+    'Civil',
+    'Electrical',
+    'Electronics'
+  ]
+  semesters = [
+    'First',
+    'Second',
+    'Third',
+    'Fourth',
+    'Fifth',
+    'Seventh',
+    'Eighth'
+  ]
 
   registrationForm = this.formBuilder.group({
     id: [null,],

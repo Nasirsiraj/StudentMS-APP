@@ -89,7 +89,11 @@
         matInput
         formControlName="department"
         placeholder="department"
+        [matAutocomplete]="deptSuggession"
       />
+      <mat-autocomplete autoActiveFirstOption #deptSuggession="matAutocomplete">
+        <mat-option *ngFor="let dept of departments" [value]="dept">{{dept}}</mat-option>
+      </mat-autocomplete>
       <mat-error *ngIf="department && department.invalid && department.touched">
         <span *ngIf="department.hasError('required')">
           department is required
@@ -112,7 +116,11 @@
         matInput
         formControlName="semester"
         placeholder="semester"
+        [matAutocomplete]="semesterSuggession"
       />
+      <mat-autocomplete autoActiveFirstOption #semesterSuggession="matAutocomplete">
+        <mat-option *ngFor="let seme of semesters" [value]="seme">{{seme}}</mat-option>
+      </mat-autocomplete>
       <mat-error *ngIf="semester && semester.invalid && semester.touched">
         <span *ngIf="semester.hasError('required')">
           semester is required
