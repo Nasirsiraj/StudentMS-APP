@@ -21,7 +21,15 @@ export class StudentService {
   // get student by id
   public getStudentById(id: number): Observable<Student | null>{
     return this.httpClient.get<Student>(`${this.apiUrl}/student/${id}`);
-}
+  }
+  // get student by roll
+  public getStudentByRoll(roll: number): Observable<Student | null>{
+    return this.httpClient.get<Student | null>(`${this.apiUrl}/studentByRoll/${roll}`)
+  }
+  // get student by reg
+  public getStudentByReg(reg: number): Observable<Student | null>{
+    return this.httpClient.get<Student | null>(`${this.apiUrl}/studentByReg/${reg}`)
+  }
   // post all student
   public postAllStudent(students: Student[]): Observable<Student[]>{
     return this.httpClient.post<Student[]>(`${this.apiUrl}/students`, students);
