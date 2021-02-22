@@ -33,7 +33,43 @@ export class SearchStudentComponent implements OnInit {
   onSubmit(value: any): void{
     this.isSubmitted = true
     try {
+      this
+        .studentService
+        .getStudentByRoll(value.roll)
+        .subscribe(
+          (response) => {
+            this.student = response
+            if(this.student == null){
+              // no student found
+              this.isSucceed = false
+              this.isFailed = true
+              this.feedbackMessage = "Student profile not found!"
+              this.showSnackBar(this.feedbackMessage)
 
+            } else if(this.student != null && this.student.reg != value.reg){
+              // student found but reg mismatched
+              this.isSucceed = false
+              this.isFailed = true
+              this.feedbackMessage = "Reg no mismatched!"
+              this.showSnackBar(this.feedbackMessage)
+
+            } else if(this.student != null && this.student.reg == value.reg && this.student.roll == value.roll){
+              // succeed
+              this.isSucceed = true
+              this.isFailed = false
+              this.feedbackMessage = "Student Found!"
+              this.showSnackBar(this.feedbackMessage)
+            }
+          },
+          (error) => {
+            // failed
+            // server error
+            this.isSucceed = false
+            this.isFailed = true
+            this.feedbackMessage = "Server Error!"
+            this.showSnackBar(this.feedbackMessage)
+          }
+        )
     }catch (e){
       console.log(e.message)
       this.showSnackBar('Error Occurred')
