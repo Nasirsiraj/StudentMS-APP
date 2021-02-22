@@ -1,1 +1,162 @@
-<p>add-result works!</p>
+<div class="container" *ngIf="!isSubmitted">
+  <h1 align="center">Enter Result info</h1>
+  <mat-divider></mat-divider>
+  <br><br>
+  <form [formGroup]="addResultForm">
+<!--    id-->
+<!--    roll-->
+    <mat-form-field appearance="fill">
+      <mat-label>Student roll</mat-label>
+      <input
+        type="number"
+        name="roll"
+        matInput
+        formControlName="roll"
+        placeholder="roll no"
+      />
+      <mat-error *ngIf="roll && roll.invalid && roll.touched">
+        <span *ngIf="roll.hasError('required')">roll no is required</span>
+        <span *ngIf="roll.hasError('min')">minimum 6 digit required</span>
+        <span *ngIf="roll.hasError('max')">maximum 10 digit required</span>
+      </mat-error>
+    </mat-form-field>
+    <br><br>
+
+<!--    bangla-->
+    <mat-form-field appearance="fill">
+      <mat-label>Bangla result</mat-label>
+      <input
+        type="number"
+        name="bangla"
+        matInput
+        formControlName="bangla"
+        placeholder="bangla result"
+      />
+      <mat-error *ngIf="bangla && bangla.invalid && bangla.touched">
+        <span *ngIf="bangla.hasError('required')">marks is required</span>
+        <span *ngIf="bangla.hasError('min')">minimum 0 required</span>
+        <span *ngIf="bangla.hasError('max')">maximum 100 required</span>
+      </mat-error>
+    </mat-form-field>
+    <br><br>
+
+<!--    english-->
+    <mat-form-field appearance="fill">
+      <mat-label>English result</mat-label>
+      <input
+        type="number"
+        name="english"
+        matInput
+        formControlName="english"
+        placeholder="english result"
+      />
+      <mat-error *ngIf="english && english.invalid && english.touched">
+        <span *ngIf="english.hasError('required')">marks is required</span>
+        <span *ngIf="english.hasError('min')">minimum 0 required</span>
+        <span *ngIf="english.hasError('max')">maximum 100 required</span>
+      </mat-error>
+    </mat-form-field>
+    <br><br>
+
+<!--    math-->
+    <mat-form-field appearance="fill">
+      <mat-label>Math result</mat-label>
+      <input
+        type="number"
+        name="math"
+        matInput
+        formControlName="math"
+        placeholder="math result"
+      />
+      <mat-error *ngIf="math && math.invalid && math.touched">
+        <span *ngIf="math.hasError('required')">marks is required</span>
+        <span *ngIf="math.hasError('min')">minimum 0 required</span>
+        <span *ngIf="math.hasError('max')">maximum 100 required</span>
+      </mat-error>
+    </mat-form-field>
+    <br><br>
+
+<!--    computer-->
+    <mat-form-field appearance="fill">
+      <mat-label>Computer result</mat-label>
+      <input
+        type="number"
+        name="computer"
+        matInput
+        formControlName="computer"
+        placeholder="computer result"
+      />
+      <mat-error *ngIf="computer && computer.invalid && computer.touched">
+        <span *ngIf="computer.hasError('required')">marks is required</span>
+        <span *ngIf="computer.hasError('min')">minimum 0 required</span>
+        <span *ngIf="computer.hasError('max')">maximum 100 required</span>
+      </mat-error>
+    </mat-form-field>
+    <br><br>
+
+<!--    physics-->
+    <mat-form-field appearance="fill">
+      <mat-label>Physics result</mat-label>
+      <input
+        type="number"
+        name="physics"
+        matInput
+        formControlName="physics"
+        placeholder="physics result"
+      />
+      <mat-error *ngIf="physics && physics.invalid && physics.touched">
+        <span *ngIf="physics.hasError('required')">marks is required</span>
+        <span *ngIf="physics.hasError('min')">minimum 0 required</span>
+        <span *ngIf="physics.hasError('max')">maximum 100 required</span>
+      </mat-error>
+    </mat-form-field>
+    <br><br>
+
+<!--    chemistry-->
+    <mat-form-field appearance="fill">
+      <mat-label>Chemistry result</mat-label>
+      <input
+        type="number"
+        name="chemistry"
+        matInput
+        formControlName="chemistry"
+        placeholder="chemistry result"
+      />
+      <mat-error *ngIf="chemistry && chemistry.invalid && chemistry.touched">
+        <span *ngIf="chemistry.hasError('required')">marks is required</span>
+        <span *ngIf="chemistry.hasError('min')">minimum 0 required</span>
+        <span *ngIf="chemistry.hasError('max')">maximum 100 required</span>
+      </mat-error>
+    </mat-form-field>
+    <br><br>
+
+<!--    biology-->
+    <mat-form-field appearance="fill">
+      <mat-label>Biology result</mat-label>
+      <input
+        type="number"
+        name="biology"
+        matInput
+        formControlName="biology"
+        placeholder="biology result"
+      />
+      <mat-error *ngIf="biology && biology.invalid && biology.touched">
+        <span *ngIf="biology.hasError('required')">marks is required</span>
+        <span *ngIf="biology.hasError('min')">minimum 0 required</span>
+        <span *ngIf="biology.hasError('max')">maximum 100 required</span>
+      </mat-error>
+    </mat-form-field>
+    <br><br>
+
+<!--    submit button-->
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="addResultForm.invalid"
+      (click)="onSubmit(addResultForm.value)">
+      Submit
+    </button>
+  </form>
+</div>
+<br><br><br><br><br><br>
+end
