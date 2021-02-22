@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="!isSubmitted">
   <h1>Enter your info</h1>
   <mat-divider></mat-divider>
   <br><br>
@@ -47,4 +47,36 @@
       color="primary"
     >Search</button>
   </form>
+</div>
+<div class="failed" *ngIf="isFailed && feedbackMessage">
+  <h1 align="center">Can't Find Student Result</h1>
+  <h1 align="center">{{feedbackMessage}}></h1>
+  <mat-divider></mat-divider>
+  <br><br>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="refreshPage()">
+    Try Again
+  </button>
+</div>
+<div class="succeed" *ngIf="isSucceed && result">
+  <h1 align="center">{{feedbackMessage}}.</h1>
+  <h1 align="center">Roll: {{result.roll}}</h1>
+  <mat-divider></mat-divider>
+  <br><br>
+  <h1>Bangla: {{result.bangla}}</h1>
+  <h1>English: {{result.english}}</h1>
+  <h1>Math: {{result.math}}</h1>
+  <h1>Computer: {{result.computer}}</h1>
+  <h1>Physics: {{result.physics}}</h1>
+  <h1>Chemistry: {{result.chemistry}}</h1>
+  <h1>Biology: {{result.biology}}</h1>
+  <br><br>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="refreshPage()">
+    Try more
+  </button>
 </div>
