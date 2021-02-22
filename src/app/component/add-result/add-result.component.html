@@ -157,6 +157,30 @@
       Submit
     </button>
   </form>
+  <br><br><br><br><br>
 </div>
-<br><br><br><br><br><br>
-end
+<div class="failed" *ngIf="isFailed && !isSucceed && isSubmitted && feedbackMessage">
+  <br>
+  <h1 align="center">Adding result failed</h1>
+  <h1 align="center">{{feedbackMessage}}</h1>
+  <mat-divider></mat-divider>
+  <br><br><br>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="refreshPage()">
+    Try Again
+  </button>
+</div>
+<div class="success" *ngIf="isSucceed && isSubmitted">
+  <br><br>
+  <h1 align="center">{{feedbackMessage}}</h1>
+  <mat-divider></mat-divider>
+  <br><br>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="refreshPage()">
+    Add another
+  </button>
+</div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {Result} from '../../model/result.model';
+import {ResultService} from '../../service/result.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-add-result',
@@ -11,8 +13,13 @@ export class AddResultComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private resultService: ResultService,
+    private snackBar: MatSnackBar
   ) { }
   isSubmitted = false
+  isSucceed = false
+  isFailed = false
+  feedbackMessage = ""
 
   addResultForm = this.formBuilder.group({
     id: [null],
@@ -31,14 +38,53 @@ export class AddResultComponent implements OnInit {
   onSubmit(value: Result): void{
     this.isSubmitted = true
     try{
+      this
+        .resultService
+        .postOneResult(value)
+        .subscribe(
+          (response) => {
+            if(response == null){
+               // failed: duplicate roll
+              this.isSucceed = false
+              this.isFailed = true
+              this.feedbackMessage = "Duplicate Roll!"
+              this.showSnackBar(this.feedbackMessage, 'Close')
 
+            } else if(response != null && response.roll != value.roll){
+              // server error: failed
+              this.isSucceed = false
+              this.isFailed = true
+              this.feedbackMessage = "Server error!"
+              this.showSnackBar(this.feedbackMessage, 'Close')
 
+            } else if(response != null && response.roll == value.roll){
+              this.isSucceed = true
+              this.isFailed = false
+              this.feedbackMessage = "Result added successful!"
+              this.showSnackBar(this.feedbackMessage, 'Done')
+            }
+          },
+          (error) => {
+            this.isSucceed = false
+            this.isFailed = true
+            this.feedbackMessage = "Server error!"
+            this.showSnackBar(this.feedbackMessage, 'Close')
+          }
+        )
     }catch (e){
-
+      this.isSucceed = false
+      this.isFailed = true
+      this.feedbackMessage = "Error occurred!"
+      this.showSnackBar(this.feedbackMessage, 'Close')
     }
     this.addResultForm.reset()
   }
-
+  showSnackBar(message: string, action: string): void{
+    this.snackBar.open(message, action, {duration: 5000})
+  }
+  refreshPage(): void{
+    window.location.reload()
+  }
   // getters
   get id(){
     return this.addResultForm.get('id')
