@@ -15,7 +15,7 @@ export class AllStudentComponent implements OnInit {
 
   isLoading = true
   students: Student[] = []
-  isStudentsEmpty: boolean = (this.students = []) ? true : false
+  isStudentsEmpty: boolean = (this.students == []) ? true : false
   studentColumns = ["name", "roll", "reg", "department", "semester", "edit", "delete"]
   rippleUnbounded = true
   rippleCentered = false
@@ -33,11 +33,12 @@ export class AllStudentComponent implements OnInit {
         (response) => {
           this.isLoading = false
           this.students = response
-          this.isStudentsEmpty = (this.students = []) ? true : false
+          console.log(this.students)
+          this.isStudentsEmpty = (this.students == []) ? true : false
         },
         (error) => {
           this.students = []
-          this.isStudentsEmpty = (this.students = []) ? true : false
+          this.isStudentsEmpty = (this.students == []) ? true : false
           this.isLoading = false
           console.log('Fetching all students failed')
         }
