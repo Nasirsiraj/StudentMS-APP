@@ -11,6 +11,7 @@ import {AllStudentComponent} from './component/all-student/all-student.component
 import {SearchStudentComponent} from './component/search-student/search-student.component';
 import {FindResultComponent} from './component/find-result/find-result.component';
 import {NoticeBoardComponent} from './component/notice-board/notice-board.component';
+import {AddResultComponent} from './component/add-result/add-result.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
@@ -19,6 +20,7 @@ const routes: Routes = [
       {path: 'all-student', component: AllStudentComponent},
       {path: 'search-student', component: SearchStudentComponent},
       {path: 'find-result', component: FindResultComponent},
+      {path: 'add-result', component: AddResultComponent},
       {path: 'notice-board', component: NoticeBoardComponent},
       {path: 'registration', component: RegistrationComponent},
       {path: 'contact', component: ContactComponent},
@@ -41,6 +43,7 @@ export const RoutingComponent = [
   AllStudentComponent,
   SearchStudentComponent,
   FindResultComponent,
+  AddResultComponent,
   NoticeBoardComponent,
   ErrorPageComponent,
   RegistrationComponent,
