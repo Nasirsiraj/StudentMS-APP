@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="!isLoading">
   <h1 align="center">All Student Info Table</h1>
   <mat-divider></mat-divider>
   <br>
@@ -81,4 +81,12 @@
  </table>
   <br><br><br><br>
   <br><br><br><br>
+</div>
+<div class="empty" *ngIf="isStudentsEmpty && !isLoading">
+  <br><br><br>
+  <h1 align="center">Student Database is empty!!</h1>
+</div>
+<div class="loading" *ngIf="isStudentsEmpty && isLoading">
+  <br><br><br>
+  <mat-spinner color="primary"></mat-spinner>
 </div>
