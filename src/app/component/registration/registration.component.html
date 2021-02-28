@@ -136,6 +136,7 @@
     <br>
     <!--    submit-->
     <button mat-raised-button
+            type="button"
             [disabled]="registrationForm.invalid"
             (click)="onSubmit(registrationForm.value)"
             color="primary"
@@ -148,8 +149,13 @@
   <br>
   <h1 align="center">{{feedbackMessage}}</h1>
   <mat-divider></mat-divider>
-  <br><br>
-  {{student | json}}
+  <br>
+  <h1>Name: {{student.name}}</h1>
+  <h1>Roll: {{student.roll}}</h1>
+  <h1>Reg: {{student.reg}}</h1>
+  <h1>Email: {{student.email}}</h1>
+  <h1>Department: {{student.department}}</h1>
+  <h1>Semester: {{student.semester}}</h1>
   <br><br>
   <button
     mat-raised-button

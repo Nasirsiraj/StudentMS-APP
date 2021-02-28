@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Student} from '../../model/student.model';
 import {StudentService} from '../../service/student.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-all-student',
@@ -10,38 +12,69 @@ import {StudentService} from '../../service/student.service';
 export class AllStudentComponent implements OnInit {
 
   constructor(
-    private studentService: StudentService
+    private studentService: StudentService,
+    private snackBar: MatSnackBar,
+    private router: Router
   ) { }
 
   isLoading = true
   students: Student[] = []
   isStudentsEmpty: boolean = (this.students == []) ? true : false
   studentColumns = ["name", "roll", "reg", "department", "semester", "edit", "delete"]
+
+  // ripple data >>
   rippleUnbounded = true
   rippleCentered = false
   rippleRadius = 30
 
   ngOnInit(): void {
-    this.updateStudents()
+   this.updateStudents()
   }
 
   updateStudents(): void{
-    this
-      .studentService
-      .getAllStudent()
-      .subscribe(
+    this.isLoading = true
+    try {
+      console.log('updating students begin....')
+      this.studentService.getAllStudent().subscribe(
         (response) => {
-          this.isLoading = false
+          // got a response can be empty and full of data
+          // loading completed
           this.students = response
-          console.log(this.students)
-          this.isStudentsEmpty = (this.students == []) ? true : false
+          this.isLoading = false
         },
         (error) => {
-          this.students = []
-          this.isStudentsEmpty = (this.students == []) ? true : false
+          // error
+          // loading completed
           this.isLoading = false
-          console.log('Fetching all students failed')
         }
       )
+    }catch (e){
+      console.log(e.message)
+    }
+  }
+  reload(): void{
+    window.location.reload()
+  }
+  deleteStudent(id: number): void{
+    this.isLoading = true
+    this.studentService.deleteStudentStudentById(id).subscribe(
+      (response) => {
+        console.log(response)
+        this.updateStudents()
+        this.snackBar.open(response.toString(), 'Close',{duration: 5000})
+      },
+      (error) => {
+        this.isLoading = false
+        this.students = []
+        this.updateStudents()
+      }
+    )
+  }
+  goToEditPage(id: number): void{
+    try{
+      this.router.navigate(['/dashboard/edit-student', id])
+    }catch (e) {
+      console.log(e.message)
+    }
   }
 }
