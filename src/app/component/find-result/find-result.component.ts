@@ -42,13 +42,13 @@ export class FindResultComponent implements OnInit {
               // result not found
               this.isFailed = true
               this.isSucceed = false
-              this.feedbackMessage = "Error occurred!"
+              this.feedbackMessage = "Student not found!"
               this.showSnackBar(this.feedbackMessage)
 
             } else if(this.result != null && this.result.roll != value.roll){
               this.isFailed = true
               this.isSucceed = false
-              this.feedbackMessage = "Error occurred!"
+              this.feedbackMessage = "Roll no not found!"
               this.showSnackBar(this.feedbackMessage)
 
             } else if(this.result != null && this.result.roll == value.roll){

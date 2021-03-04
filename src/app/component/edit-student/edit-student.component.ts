@@ -92,6 +92,7 @@ export class EditStudentComponent implements OnInit {
             }else if(response != null && response.id == value.id){
               this.isSucceed = true
               this.snackBar.open('Student saved successfully', 'Done', {duration: 5000})
+              this.router.navigate(['/dashboard/all-student'])
             }
           },
           (error) => {
