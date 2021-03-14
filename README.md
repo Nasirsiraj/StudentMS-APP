@@ -1,41 +1,34 @@
 # StudentmsApp 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
+Angular CLI version 11.1.2.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-## All Student
-![All Student](https://github.com/Nasirsiraj/studentms-app/blob/master/src/assets/Screenshot/1.png?rew=true "All Student Page")
-
+## All Student Page
+![All Student](?raw=true "All Student Page")
 
 ## Register Student
+![Register Student](?raw=true "Register Student Page")
+
 ## Search Student
+![Search Student](?raw=true "Search Student Page")
+
+## Search Student Successful
+![Search Student Successful](?raw=true "Search Student Successful Page")
+
 ## Find Result
-## Notice Board 
-## Contact 
+![Find Result](?raw=true "Find Result")
+
+## Find Result Successful
+![Find Result Successful](?raw=true "Find Result Successful")
+
+## Contact
+![Contact](?raw=true "Contact Page") 
+
 ## Help 
+![Help](?raw=true "Help Page")
+
 ## Share 
+![Share](?raw=true "Share")
+
 ## Settings 
+![Settings](?raw=true "Settings")
 
 
