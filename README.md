@@ -2,33 +2,33 @@
 Angular CLI version 11.1.2.
 
 ## All Student Page
-![All Student](?raw=true "All Student Page")
+![All Student](https://github.com/Nasirsiraj/studentms-app/blob/master/src/assets/Screenshot/all-student.png?raw=true "All Student Page")
 
 ## Register Student
-![Register Student](?raw=true "Register Student Page")
+![Register Student](https://github.com/Nasirsiraj/studentms-app/blob/master/src/assets/Screenshot/register-student.png?raw=true "Register Student Page")
 
 ## Search Student
-![Search Student](?raw=true "Search Student Page")
+![Search Student](https://github.com/Nasirsiraj/studentms-app/blob/master/src/assets/Screenshot/search-student.png?raw=true "Search Student Page")
 
 ## Search Student Successful
-![Search Student Successful](?raw=true "Search Student Successful Page")
+![Search Student Successful](https://github.com/Nasirsiraj/studentms-app/blob/master/src/assets/Screenshot/search-student-successful.png?raw=true "Search Student Successful Page")
 
 ## Find Result
-![Find Result](?raw=true "Find Result")
+![Find Result](https://github.com/Nasirsiraj/studentms-app/blob/master/src/assets/Screenshot/find-result.png?raw=true "Find Result")
 
 ## Find Result Successful
-![Find Result Successful](?raw=true "Find Result Successful")
+![Find Result Successful](https://github.com/Nasirsiraj/studentms-app/blob/master/src/assets/Screenshot/find-result-successful.png?raw=true "Find Result Successful")
 
 ## Contact
-![Contact](?raw=true "Contact Page") 
+![Contact](https://github.com/Nasirsiraj/studentms-app/blob/master/src/assets/Screenshot/contact-us.png?raw=true "Contact Page") 
 
 ## Help 
-![Help](?raw=true "Help Page")
+![Help](https://github.com/Nasirsiraj/studentms-app/blob/master/src/assets/Screenshot/help.png?raw=true "Help Page")
 
 ## Share 
-![Share](?raw=true "Share")
+![Share](https://github.com/Nasirsiraj/studentms-app/blob/master/src/assets/Screenshot/share.png?raw=true "Share")
 
 ## Settings 
-![Settings](?raw=true "Settings")
+![Settings](https://github.com/Nasirsiraj/studentms-app/blob/master/src/assets/Screenshot/settings.png?raw=true "Settings")
 
 
